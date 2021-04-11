@@ -1,11 +1,7 @@
 <template>
 <main>
   <img class="menu" src="./assets/icons/menu.svg" alt="menu" />
-  <div class="logos">
-    <img class="ducati-logo" src="./assets/images/ducati-logo.png" alt="Ducati Logo" />
-    <img class="monster-logo" src="./assets/images/monster-logo.png" alt="Monster Logo" />
-    <h1>{{this.data[this.current].number}}</h1>
-  </div>
+  <Header :number="this.data[this.current].number" />
   <div class="infos">
     <table-data />
     <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
@@ -26,6 +22,7 @@
 <script>
 import ColourSelector from './components/ColourSelector.vue';
 import TableData from './components/TableData.vue';
+import Header from './components/Header.vue';
 
 const ducati01 = require('./assets/images/ducati-01.png');
 const ducati02 = require('./assets/images/ducati-02.png');
@@ -151,6 +148,7 @@ const mockData = [
 export default {
   components: {
     ColourSelector,
+    Header,
     TableData,
   },
   name: 'App',
@@ -214,32 +212,6 @@ main {
     left: 9.875vw;
     position: absolute;
     top: 5.41vh;
-  }
-
-  div.logos {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    img.ducati-logo {
-      margin-top: 5.08vh;
-      max-height: 9.75vh;
-      max-width: 6.87vw;
-    }
-
-    img.monster-logo {
-      margin-top: 3.75vh;
-      max-height: 1.66vh;
-      max-width: 20.1vw;
-    }
-
-    h1 {
-      color: white;
-      font-size: 12.5rem;
-      line-height: 15rem;
-      font-weight: 900;
-    }
   }
 
   div.infos {
