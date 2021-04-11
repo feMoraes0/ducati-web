@@ -28,8 +28,8 @@ import ColourSelector from './components/ColourSelector.vue';
 import TableData from './components/TableData.vue';
 
 const ducati01 = require('./assets/images/ducati-01.png');
-const ducati02 = require('./assets/images/ducati-01.png');
-const ducati03 = require('./assets/images/ducati-01.png');
+const ducati02 = require('./assets/images/ducati-02.png');
+const ducati03 = require('./assets/images/ducati-03.png');
 
 const mockData = [
   {
