@@ -11,6 +11,11 @@
     <colour-selector />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
+  <section class="front-layer">
+    <img src="./assets/icons/arrow-left.svg" alt="Arrow Left" />
+    <img class="motorcycle" src="./assets/images/ducati-01.png" alt="Motorcycle" />
+    <img src="./assets/icons/arrow-right.svg" alt="Arrow Right" />
+  </section>
 </main>
 </template>
 
@@ -91,6 +96,33 @@ main {
     margin-bottom: 7.33vh;
     padding: 3.66vh 5.31vw 5.75vh 5vh;
     width: 90vw;
+  }
+
+  section.front-layer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0 10vw;
+    position: absolute;
+    width: 100vw;
+
+    img {
+      cursor: pointer;
+      max-height: 5.8vh;
+      max-width: 4.37vw;
+
+      &:first-child, &:last-child {
+        margin-bottom: 1.58vh;
+      }
+    }
+
+    img.motorcycle {
+      margin-bottom: 4vh;
+      max-height: 54.1vh;
+      max-width: 65.6vw;
+    }
   }
 }
 </style>
