@@ -4,7 +4,7 @@
   <div class="logos">
     <img class="ducati-logo" src="./assets/images/ducati-logo.png" alt="Ducati Logo" />
     <img class="monster-logo" src="./assets/images/monster-logo.png" alt="Monster Logo" />
-    <h1>797</h1>
+    <h1>{{this.data[this.current].number}}</h1>
   </div>
   <div class="infos">
     <table-data />
@@ -13,7 +13,11 @@
   </div>
   <section class="front-layer">
     <img src="./assets/icons/arrow-left.svg" alt="Arrow Left" />
-    <img class="motorcycle" src="./assets/images/ducati-01.png" alt="Motorcycle" />
+    <img
+      class="motorcycle"
+      :src="this.data[this.current].image"
+      alt="Motorcycle"
+    />
     <img src="./assets/icons/arrow-right.svg" alt="Arrow Right" />
   </section>
 </main>
@@ -23,12 +27,139 @@
 import ColourSelector from './components/ColourSelector.vue';
 import TableData from './components/TableData.vue';
 
+const ducati01 = require('./assets/images/ducati-01.png');
+const ducati02 = require('./assets/images/ducati-01.png');
+const ducati03 = require('./assets/images/ducati-01.png');
+
+const mockData = [
+  {
+    id: 0,
+    image: ducati01,
+    number: 797,
+    colour: '#DF1F26',
+    specs: [
+      {
+        id: 1,
+        title: 'Displacement',
+        info: '803 cc',
+      },
+      {
+        id: 2,
+        title: 'Horse Power',
+        info: '73 hp (54 kW)',
+      },
+      {
+        id: 3,
+        title: 'Torque',
+        info: '67 Nm (49.0 lb-ft)',
+      },
+      {
+        id: 4,
+        title: 'Dry Weight',
+        info: '175 Kg (386 lb)',
+      },
+      {
+        id: 5,
+        title: 'Seat Height',
+        info: '805 mm (31.69 in)',
+      },
+      {
+        id: 6,
+        title: 'Safety',
+        info: 'ABS',
+      },
+    ],
+  },
+  {
+    id: 1,
+    image: ducati02,
+    number: 821,
+    colour: '#141414',
+    specs: [
+      {
+        id: 1,
+        title: 'Displacement',
+        info: '821 cc',
+      },
+      {
+        id: 2,
+        title: 'Horse Power',
+        info: '109 hp (80 kW)',
+      },
+      {
+        id: 3,
+        title: 'Torque',
+        info: '86 Nm (63 lb-ft)',
+      },
+      {
+        id: 4,
+        title: 'Dry Weight',
+        info: '180.5 Kg (398 lb)',
+      },
+      {
+        id: 5,
+        title: 'Seat Height',
+        info: '805 mm (31.69 in)',
+      },
+      {
+        id: 6,
+        title: 'Safety',
+        info: 'ABS',
+      },
+    ],
+  },
+  {
+    id: 2,
+    image: ducati03,
+    number: 797,
+    colour: '#E4E4E4',
+    specs: [
+      {
+        id: 1,
+        title: 'Displacement',
+        info: '803 cc',
+      },
+      {
+        id: 2,
+        title: 'Horse Power',
+        info: '73 hp (54 kW)',
+      },
+      {
+        id: 3,
+        title: 'Torque',
+        info: '67 Nm (49.0 lb-ft)',
+      },
+      {
+        id: 4,
+        title: 'Dry Weight',
+        info: '175 Kg (386 lb)',
+      },
+      {
+        id: 5,
+        title: 'Seat Height',
+        info: '805 mm (31.69 in)',
+      },
+      {
+        id: 6,
+        title: 'Safety',
+        info: 'ABS',
+      },
+    ],
+  },
+];
+
 export default {
   components: {
     ColourSelector,
     TableData,
   },
   name: 'App',
+  data() {
+    return {
+      current: 0,
+      data: mockData,
+    };
+  },
 };
 </script>
 
