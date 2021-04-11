@@ -1,17 +1,17 @@
 <template>
-  <p>{{title}}</p>
+  <p>{{text}}</p>
 </template>
 
 <script>
 export default {
   name: 'ListTitle',
   props: {
-    title: String,
+    text: String,
   },
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 p {
   color: #181818;
   font-size: 0.75rem;
