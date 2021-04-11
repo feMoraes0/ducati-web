@@ -12,13 +12,13 @@
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
   <section class="front-layer">
-    <img src="./assets/icons/arrow-left.svg" alt="Arrow Left" />
+    <img v-on:click="goNext('left')" src="./assets/icons/arrow-left.svg" alt="Arrow Left" />
     <img
       class="motorcycle"
       :src="this.data[this.current].image"
       alt="Motorcycle"
     />
-    <img src="./assets/icons/arrow-right.svg" alt="Arrow Right" />
+    <img v-on:click="goNext('right')" src="./assets/icons/arrow-right.svg" alt="Arrow Right" />
   </section>
 </main>
 </template>
@@ -168,8 +168,16 @@ export default {
         currentColours.push({ id, colour });
         return null;
       });
-      console.log(currentColours);
       return currentColours;
+    },
+  },
+  methods: {
+    goNext(direction) {
+      if (direction === 'left' && this.current > 0) {
+        this.current -= 1;
+      } else if (direction === 'right' && this.current < this.data.length - 1) {
+        this.current += 1;
+      }
     },
   },
 };
