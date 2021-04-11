@@ -7,33 +7,21 @@
     <h1>797</h1>
   </div>
   <div class="infos">
-    <div class="data">
-      <ListTitle text="Displacement" />
-      <ListInfo text="803cc" />
-      <ListTitle text="Horse Power" />
-      <ListInfo text="73 hp (54 kW)" />
-      <ListTitle text="Torque" />
-      <ListInfo text="67 Nm (49.0 lb-ft)" />
-      <ListTitle text="Dry Weight" />
-      <ListInfo text="175 Kg (386 lb)" />
-      <ListTitle text="Seat Height" />
-      <ListInfo text="805 mm (31.69 in)" />
-      <ListTitle text="Safety" />
-      <ListInfo text="ABS" />
-    </div>
+    <table-data />
+    <colour-selector />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
 </main>
 </template>
 
 <script>
-import ListTitle from './components/ListTitle.vue';
-import ListInfo from './components/ListInfo.vue';
+import ColourSelector from './components/ColourSelector.vue';
+import TableData from './components/TableData.vue';
 
 export default {
   components: {
-    ListTitle,
-    ListInfo,
+    ColourSelector,
+    TableData,
   },
   name: 'App',
 };
