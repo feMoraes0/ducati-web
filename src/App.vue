@@ -62,10 +62,14 @@ main {
 
     img.ducati-logo {
       margin-top: 5.08vh;
+      max-height: 9.75vh;
+      max-width: 6.87vw;
     }
 
     img.monster-logo {
       margin-top: 3.75vh;
+      max-height: 1.66vh;
+      max-width: 20.1vw;
     }
 
     h1 {
