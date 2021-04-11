@@ -7,15 +7,7 @@
     <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
-  <section class="front-layer">
-    <img v-on:click="goNext('left')" src="./assets/icons/arrow-left.svg" alt="Arrow Left" />
-    <img
-      class="motorcycle"
-      :src="this.data[this.current].image"
-      alt="Motorcycle"
-    />
-    <img v-on:click="goNext('right')" src="./assets/icons/arrow-right.svg" alt="Arrow Right" />
-  </section>
+  <front-layer :image="this.data[this.current].image" @goNext="goNext" />
 </main>
 </template>
 
@@ -23,6 +15,7 @@
 import ColourSelector from './components/ColourSelector.vue';
 import TableData from './components/TableData.vue';
 import Header from './components/Header.vue';
+import FrontLayer from './components/FrontLayer.vue';
 
 const ducati01 = require('./assets/images/ducati-01.png');
 const ducati02 = require('./assets/images/ducati-02.png');
@@ -150,6 +143,7 @@ export default {
     ColourSelector,
     Header,
     TableData,
+    FrontLayer,
   },
   name: 'App',
   data() {
@@ -225,34 +219,6 @@ main {
     margin-bottom: 7.33vh;
     padding: 3.66vh 5.31vw 5.75vh 5vh;
     width: 90vw;
-  }
-
-  section.front-layer {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    height: 65.6vh;
-    justify-content: space-between;
-    margin-top: 17vh;
-    padding: 0 10vw;
-    position: absolute;
-    width: 100vw;
-
-    img {
-      max-height: 5.8vh;
-      max-width: 4.37vw;
-
-      &:first-child, &:last-child {
-        cursor: pointer;
-        margin-bottom: 1.58vh;
-      }
-    }
-
-    img.motorcycle {
-      margin-bottom: 4vh;
-      max-height: 54.1vh;
-      max-width: 65.6vw;
-    }
   }
 }
 </style>
