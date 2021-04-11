@@ -3,6 +3,7 @@
     <div
       v-for="item in colours"
       class="colour-box"
+      v-on:click="selectColour(item.id)"
       :key="item.id"
       :class="{ active: (item.id === activated)}"
       :style="{ backgroundColor: item.colour }"
@@ -16,6 +17,12 @@ export default {
   props: {
     colours: Object,
     activated: Number,
+  },
+  methods: {
+    selectColour(id) {
+      console.log(id);
+      this.$emit('selectByColour', id);
+    },
   },
 };
 </script>
