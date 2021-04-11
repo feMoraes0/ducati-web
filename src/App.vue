@@ -8,7 +8,7 @@
   </div>
   <div class="infos">
     <table-data />
-    <colour-selector />
+    <colour-selector :activated="current" :colours="getColours" />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
   <section class="front-layer">
@@ -159,6 +159,18 @@ export default {
       current: 0,
       data: mockData,
     };
+  },
+  computed: {
+    getColours() {
+      const currentColours = [];
+      this.data.map((element) => {
+        const { id, colour } = element;
+        currentColours.push({ id, colour });
+        return null;
+      });
+      console.log(currentColours);
+      return currentColours;
+    },
   },
 };
 </script>

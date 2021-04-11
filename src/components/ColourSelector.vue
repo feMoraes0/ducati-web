@@ -1,10 +1,11 @@
 <template>
   <section>
     <div
-      v-for="option in options"
+      v-for="item in colours"
       class="colour-box"
-      :key="option.id"
-      :style="{ backgroundColor: option.colour }"
+      :key="item.id"
+      :class="{ active: (item.id === activated)}"
+      :style="{ backgroundColor: item.colour }"
     />
   </section>
 </template>
@@ -12,23 +13,9 @@
 <script>
 export default {
   name: 'ColourSelector',
-  data() {
-    return {
-      options: [
-        {
-          id: 1,
-          colour: '#DF1F26',
-        },
-        {
-          id: 2,
-          colour: '#141414',
-        },
-        {
-          id: 3,
-          colour: '#E4E4E4',
-        },
-      ],
-    };
+  props: {
+    colours: Object,
+    activated: Number,
   },
 };
 </script>
@@ -47,6 +34,10 @@ export default {
 
       &:first-child {
         margin-left: 12.93vw;
+      }
+
+      &.active {
+        filter: drop-shadow(0px 4px 32px rgba(0, 0, 0, 0.6))
       }
     }
   }
