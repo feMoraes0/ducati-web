@@ -3,7 +3,7 @@
   <img class="menu" src="./assets/icons/menu.svg" alt="menu" />
   <Header :number="this.data[this.current].number" />
   <div class="infos">
-    <table-data />
+    <table-data :infos="this.data[this.current].specs" />
     <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
