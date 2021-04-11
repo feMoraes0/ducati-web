@@ -8,7 +8,7 @@
   </div>
   <div class="infos">
     <table-data />
-    <colour-selector :activated="current" :colours="getColours" />
+    <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
     <img src="./assets/images/slogan.png" alt="slogan">
   </div>
   <section class="front-layer">
@@ -179,6 +179,12 @@ export default {
         this.current += 1;
       }
     },
+
+    goTo(id) {
+      if (id >= 0 && id < this.data.length) {
+        this.current = id;
+      }
+    },
   },
 };
 </script>
@@ -253,18 +259,19 @@ main {
     align-items: center;
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 65.6vh;
     justify-content: space-between;
+    margin-top: 17vh;
     padding: 0 10vw;
     position: absolute;
     width: 100vw;
 
     img {
-      cursor: pointer;
       max-height: 5.8vh;
       max-width: 4.37vw;
 
       &:first-child, &:last-child {
+        cursor: pointer;
         margin-bottom: 1.58vh;
       }
     }
