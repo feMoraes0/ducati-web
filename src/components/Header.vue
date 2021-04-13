@@ -32,29 +32,29 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    img.ducati-logo {
-      margin-top: 5.08vh;
-      max-height: 9.75vh;
-      max-width: 6.87vw;
-    }
-
-    img.monster-logo {
-      margin-top: 3.75vh;
-      max-height: 1.66vh;
-      max-width: 20.1vw;
-    }
-
-    h1 {
-      color: white;
-      font-size: 12.5rem;
-      line-height: 15rem;
-      font-weight: 900;
-    }
+  img.ducati-logo {
+    margin-top: 5.08vh;
+    max-height: 9.75vh;
+    max-width: 6.87vw;
   }
+
+  img.monster-logo {
+    margin-top: 3.75vh;
+    max-height: 1.66vh;
+    max-width: 20.1vw;
+  }
+
+  h1 {
+    color: white;
+    font-size: 12.5rem;
+    line-height: 15rem;
+    font-weight: 900;
+  }
+}
 </style>

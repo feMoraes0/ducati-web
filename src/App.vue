@@ -1,14 +1,14 @@
 <template>
-<main>
-  <img class="menu" src="./assets/icons/menu.svg" alt="menu" />
-  <Header :number="this.data[this.current].number" />
-  <div class="infos">
-    <table-data :infos="this.data[this.current].specs" />
-    <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
-    <img src="./assets/images/slogan.png" alt="slogan">
-  </div>
-  <front-layer :image="this.data[this.current].image" @goNext="goNext" />
-</main>
+  <main>
+    <img class="menu" src="./assets/icons/menu.svg" alt="menu" />
+    <Header :number="this.data[this.current].number" />
+    <div class="infos">
+      <table-data :infos="this.data[this.current].specs" />
+      <colour-selector :activated="current" :colours="getColours" @selectByColour="goTo" />
+      <img src="./assets/images/slogan.png" alt="slogan">
+    </div>
+    <front-layer :image="this.data[this.current].image" @goNext="goNext" />
+  </main>
 </template>
 
 <script>
