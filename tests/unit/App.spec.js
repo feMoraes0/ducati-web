@@ -29,6 +29,11 @@ describe('App component', () => {
     },
   );
 
+  it('should return colour object when getColours is called', () => {
+    // THEN
+    expect(wrapper.vm.getColours).toEqual(mockData);
+  });
+
   it('should update current value when goTo is called with valid number', () => {
     // GIVEN
     const parameter = 1;
