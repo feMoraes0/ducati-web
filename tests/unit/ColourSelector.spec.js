@@ -11,6 +11,11 @@ describe('Colour Selector Component', () => {
     },
   });
 
+  it('should validate component name', () => {
+    // THEN
+    expect(ColourSelector.name).toBe('ColourSelector');
+  });
+
   it('should validate initial prop values', () => {
     // THEN
     expect(wrapper.props().activated).toEqual(activated);
