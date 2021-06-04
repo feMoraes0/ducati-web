@@ -5,14 +5,14 @@ describe('Front Layer Component', () => {
   const hasChanged = true;
   const image = 'any_image';
   const wrapper = shallowMount(FrontLayer, {
-    data() {
-      return {
-        hasChanged,
-      };
-    },
     propsData: {
       image,
     },
+  });
+
+  it('should validate component name', () => {
+    // THEN
+    expect(FrontLayer.name).toBe('FrontLayer');
   });
 
   it('should validate initial data value', () => {
