@@ -10,6 +10,11 @@ describe('Header component', () => {
     },
   });
 
+  it('should guarantee that component name is equal file name', () => {
+    // THEN
+    expect(Header.name).toBe('Header');
+  });
+
   it('should guarantee that label is a number with no decimals', () => {
     // THEN
     expect(wrapper.vm.labelAsInt).toBe('1');
